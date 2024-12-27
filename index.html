@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <title>二维码生成器</title>
     <script src="https://fastly.jsdelivr.net/gh/davidshimjs/qrcodejs@latest/qrcode.min.js"></script>
+    <script src="/js/javascript.js"></script>
 </head>
 
 <body style="text-align: center;">
-    <div >
-        <div >
-            <div >
+    <div>
+        <div>
+            <div>
                 <label for="inputBox">二维码的内容：</label>
                 <input type="text" id="inputBox" value="">
             </div>
@@ -23,36 +24,24 @@
                 <input type="number" id="heightBox" value="128">
             </div>
             <div>
-            <div>
-                <label for="colorBox">前景色：</label>
-                <input type="color" id="colorBox" value="#000000">
+                <div>
+                    <label for="colorBox">前景色：</label>
+                    <input type="color" id="colorBox" value="#000000">
+                </div>
+                <div>
+                    <label for="bakColorBox">背景色：</label>
+                    <input type="color" id="bakColorBox" value="#ffffff">
+                </div>
             </div>
-            <div>
-                <label for="bakColorBox">背景色：</label>
-                <input type="color" id="bakColorBox" value="#ffffff">
-            </div>
-        </div>
             <button id="commitButton" onclick="commitButton_Click()">生成二维码</button>
         </div>
     </div>
-    <div style="display: flex;justify-content: center;align-items: center;">
-    <div id="qrcode" style="width:0px; height:0px;"></div>
-</div>
-    <script>
-        function commitButton_Click(){
-            document.getElementById("qrcode").innerHTML = "";
-            document.getElementById("qrcode").style.width = document.getElementById("widthBox").value + "px";
-            document.getElementById("qrcode").style.height = document.getElementById("heightBox").value + "px";
-            var qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: document.getElementById("inputBox").value,
-                width: document.getElementById("widthBox").value,
-                height: document.getElementById("heightBox").value,
-                colorDark: document.getElementById("colorBox").value,
-                colorLight: document.getElementById("bakColorBox").value,
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        }
-    </script>
+    <div>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <div id="qrcode" style="width:0px; height:0px;"></div>
+        </div>
+        <button id="downloadImg" style="display: none;" onclick="downloadImg_Click()">下载二维码</button>
+    </div>
 </body>
 
 </html>
