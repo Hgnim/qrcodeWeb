@@ -2,7 +2,7 @@
 <html lang="cn">
 
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>二维码生成器</title>
     <script src="https://fastly.jsdelivr.net/gh/davidshimjs/qrcodejs@latest/qrcode.min.js"></script>
     <script src="js/javascript.js"></script>
@@ -12,16 +12,16 @@
     <div>
         <div>
             <div>
-                <label for="inputBox">二维码的内容：</label>
+                <label for="inputBox">内容：</label>
                 <input type="text" id="inputBox" value="">
             </div>
             <div>
-                <label for="widthBox">图片宽度：</label>
-                <input type="number" id="widthBox" value="128">
+                <label for="widthBox">宽度(像素)：</label>
+                <input type="number" id="widthBox" value="128" style="width: 64px;">
             </div>
             <div>
-                <label for="heightBox">图片高度：</label>
-                <input type="number" id="heightBox" value="128">
+                <label for="heightBox">高度(像素)：</label>
+                <input type="number" id="heightBox" value="128" style="width: 64px;">
             </div>
             <div>
                 <div>
